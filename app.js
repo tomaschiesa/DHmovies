@@ -319,22 +319,36 @@ http.createServer(function(req, res){
 		let cantidadDeSalasA = theaters.length;
 		res.write('\n'+'--------------------------------------------------------------'+'\n'+'\n');  //Division lineal entre consignas (Chequear write o end)
 		res.write('      Salas en las que podes disfrutar las peliculas: ' + cantidadDeSalasA+'\n');
-		//C)_ Mostrar 
+		//C)_ Componer el listado de salas con nombre, direccion y descripcion.
+		res.write('\n'+'--------------------------------------------------------------'+'\n'+'\n');  //Division lineal entre consignas (Chequear write o end)
+		res.write('\n'+'                    ** LISTADO DE SALAS **'+'\n'+'\n');
+		let salas = [];
+		for (let i=0; i<theaters.length; i++){
+			salas.push(theaters[i].name+' >>>>' +'\n'+ '     Direccion: '+theaters[i].address+':' +'\n'+ '     Descripcion: '+theaters[i].description+'\n');
+				res.write(' *** ' + salas[i] +'\n')
+		}
 
         // Cierre decorativo de lineas
 		res.end('\n'+'--------------------------------------------------------------'+'\n'+'\n');  //Division lineal entre consignas (Chequear write o end)
         break;
     case '/contacto':
-        res.end('Nuestros productos');
+        // Cierre decorativo de lineas
+		res.end('\n'+'--------------------------------------------------------------'+'\n'+'\n');  //Division lineal entre consignas (Chequear write o end)
         break;
     case '/preguntas-frecuentes':
-        res.end('Nuestros productos');
+        // Cierre decorativo de lineas
+		res.end('\n'+'--------------------------------------------------------------'+'\n'+'\n');  //Division lineal entre consignas (Chequear write o end)
         break;
     default:
-        res.end('Error, sitio incorrecto, intente más tarde o dirigase a nuestra web principal');
+		//A)_ Dar una titulo a la seccion.
+		res.write('           |--------------------------------------|'+'\n');
+		res.write('           |      404 - PAGINA NO ENCONTRADA      |'+'\n');
+		res.write('           |--------------------------------------|'+'\n');
+
+        res.end('\n'+'             Error, sitio incorrecto, intente más'+'\n'+'           tarde o dirigase a nuestra web principal');
         console.log ('***** Intento de acceso a URL erronea ' + req.url)
         break;
 }
 
     
-}).listen (3030, 'localhost', () => console.log('Server running in 3030 port'));
+}).listen (3030, 'localhost', () => console.log('El servidor se inicio correctamente en el puerto 3030 '));
