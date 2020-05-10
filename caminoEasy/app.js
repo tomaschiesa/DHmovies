@@ -231,11 +231,11 @@ http.createServer(function(req, res){
 		//D)_ Crear un pie de pagina.
 		res.write('\n'+'--------------------------------------------------------------'+'\n'+'\n');  //Division lineal entre consignas (Chequear write o end)
 		res.write('Recorda que podes visitar las siguientes secciones:'+'\n'+'\n');
-		res.write('  i.   En Cartelera'+'\n')
-		res.write(' ii.   Mas Votadas'+'\n')
-		res.write('iii.   Sucursales'+'\n')
-		res.write(' iv.   Contacto'+'\n')
-		res.write('  v.   Preguntas Frecuentes'+'\n')
+		res.write('  i.   En Cartelera           >>   '+'http://localhost:3030/en-cartelera'+'\n')
+		res.write(' ii.   Mas Votadas            >>   '+'http://localhost:3030/mas-votadas'+'\n')
+		res.write('iii.   Sucursales             >>   '+'http://localhost:3030/sucursales'+'\n')
+		res.write(' iv.   Contacto               >>   '+'http://localhost:3030/contacto'+'\n')
+		res.write('  v.   Preguntas Frecuentes   >>   '+'http://localhost:3030/preguntas-frecuentes'+'\n')
 		// Cierre decorativo de lineas
 		res.end('\n'+'--------------------------------------------------------------'+'\n'+'\n');  //Division lineal entre consignas (Chequear write o end)
         break;
