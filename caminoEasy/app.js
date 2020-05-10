@@ -376,4 +376,4 @@ http.createServer(function(req, res){
 }
 
     
-}).listen (3030, 'localhost', () => console.log('El servidor se inicio correctamente en el puerto 3030 '));
+}).listen (3030, 'localhost', () => console.log('El servidor se inicio correctamente en el puerto 3030'));
