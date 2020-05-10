@@ -342,6 +342,23 @@ http.createServer(function(req, res){
 		res.end('\n'+'--------------------------------------------------------------'+'\n'+'\n');  //Division lineal entre consignas (Chequear write o end)
         break;
     case '/preguntas-frecuentes':
+		//A)_ Dar una titulo a la seccion.
+		res.write('           |--------------------------------------|'+'\n');
+		res.write('           |         PREGUNTAS FRECUENTES         |'+'\n');
+		res.write('           |--------------------------------------|'+'\n');
+		//B)_ Mostrar el total de las preguntas frecuentes
+		let cantidadDeFaq = faqs.length;
+		res.write('\n'+'--------------------------------------------------------------'+'\n'+'\n');  //Division lineal entre consignas (Chequear write o end)
+		res.write('Podes encontrar un total de ' + cantidadDeFaq+' FAQ`s cargadas en nuestro sitio'+'\n');
+		//C)_ Componer el listado de preguntas con pregunta y respuesta.
+		res.write('\n'+'--------------------------------------------------------------'+'\n'+'\n');  //Division lineal entre consignas (Chequear write o end)
+		res.write('\n'+'                    ** LISTADO DE PREGUNTAS **'+'\n'+'\n');
+		let pregResp = [];
+		for (let i=0; i<faqs.length; i++){
+			pregResp.push(faqs[i].faq_title + '\n' + '     Direccion: '+faqs[i].faq_answer+':' +'\n');
+				res.write(' *** ' + pregResp[i] +'\n')
+		}
+
         // Cierre decorativo de lineas
 		res.end('\n'+'--------------------------------------------------------------'+'\n'+'\n');  //Division lineal entre consignas (Chequear write o end)
         break;
