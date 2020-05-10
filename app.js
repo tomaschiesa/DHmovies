@@ -332,7 +332,13 @@ http.createServer(function(req, res){
 		res.end('\n'+'--------------------------------------------------------------'+'\n'+'\n');  //Division lineal entre consignas (Chequear write o end)
         break;
     case '/contacto':
-        // Cierre decorativo de lineas
+		//A)_ Dar una titulo a la seccion.
+		res.write('                |--------------------------------------|'+'\n');
+		res.write('                |             CONTACTANOS!             |'+'\n');
+		res.write('                |--------------------------------------|'+'\n');
+		//B)_ Cargar contenido.
+		res.end('\n'+'     ¿Tenés algo para contarnos? Nos encanta escuchar a nuestros'+'\n'+'  clientes. Si deseas contactarnos podés escribirnos al siguiente email:'+'\n'+' dhmovies@digitalhouse.com o en las redes sociales. Envianos tu consulta,'+'\n'+'sugerencia o reclamo y será respondido a la brevedad posible. Recordá que'+'\n'+' también podes consultar la sección de Preguntas Frecuentes para obtener'+'\n'+'           respuestas inmediatas a los problemas más comunes.');
+        // Cierre decorativo de lineas 
 		res.end('\n'+'--------------------------------------------------------------'+'\n'+'\n');  //Division lineal entre consignas (Chequear write o end)
         break;
     case '/preguntas-frecuentes':
@@ -345,7 +351,7 @@ http.createServer(function(req, res){
 		res.write('           |      404 - PAGINA NO ENCONTRADA      |'+'\n');
 		res.write('           |--------------------------------------|'+'\n');
 
-        res.end('\n'+'             Error, sitio incorrecto, intente más'+'\n'+'           tarde o dirigase a nuestra web principal');
+        res.end('\n'+'             Error: Sitio incorrecto, intente más'+'\n'+'           tarde o dirigase a nuestra web principal.');
         console.log ('***** Intento de acceso a URL erronea ' + req.url)
         break;
 }
